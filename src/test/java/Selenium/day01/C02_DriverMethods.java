@@ -11,8 +11,10 @@ public class C02_DriverMethods {
         //getTitle() Sayfa başlığını verir
         System.out.println("Amazon Actual Title : "+driver.getTitle());
         System.out.println("Amazon Actual Url : "+driver.getCurrentUrl());
+
         String amazonWindowHanle = driver.getWindowHandle();
         System.out.println("Amazon Window Handle Değeri : "+amazonWindowHanle);
+
 
         driver.get("https://techproeducation.com");
         System.out.println("Techproed Actual Title : "+driver.getTitle());//getTitle() methodu Sayfa başlığını verir
