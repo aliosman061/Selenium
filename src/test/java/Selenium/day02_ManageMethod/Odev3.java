@@ -1,4 +1,4 @@
-package Selenium.day02;
+package Selenium.day02_ManageMethod;
 
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Point;

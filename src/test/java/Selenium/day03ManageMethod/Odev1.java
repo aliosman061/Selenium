@@ -1,4 +1,4 @@
-package Selenium.day03dt;
+package Selenium.day03ManageMethod;
 
 public class Odev1 {
     public static void main(String[] args) {
