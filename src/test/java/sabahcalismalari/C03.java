@@ -6,9 +6,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
+import java.util.List;
 
 public class C03 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         System.setProperty("chromeDriver","src/resources/drivers/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
 
@@ -25,9 +26,22 @@ public class C03 {
         if (actulTitle.contains(beklenenTitle)){
             System.out.println("Test PASSED");
         }else System.out.println("Test FAILED");
+
+        List<WebElement> liste=  driver.findElements(By.xpath("(//*[@class='nav-a  '])[1]  |(//*[@class='nav-a  '])[2]  | (//*[@class='nav-a  '])[3]  | (//*[@class='nav-a  '])[4] | (//*[@class='nav-a  '])[5]  "));
+        for (int i = 0; i < liste.size(); i++) {
+            liste = driver.findElements(By.xpath("(//*[@class='nav-a  '])[1]  |(//*[@class='nav-a  '])[2]  | (//*[@class='nav-a  '])[3]  | (//*[@class='nav-a  '])[4] | (//*[@class='nav-a  '])[5]"));
+            System.out.println(liste.get(i).getText());
+            liste.get(i).click();
+            Thread.sleep(3000);
+
+            driver.navigate().back();
+
+            Thread.sleep(3000);
+
+        }
 //        Gift Cards sekmesine basin
-        WebElement text = driver.findElement(By.xpath("//a[text()='Gift Cards']"));
-        text.click();
+       //WebElement text = driver.findElement(By.xpath("//a[text()='Gift Cards']"));
+        //text.click();
 
 //        Birthday butonuna basin
 //        Best Seller bolumunden ilk urunu tiklayin
